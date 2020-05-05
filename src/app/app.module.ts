@@ -1,7 +1,10 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 import {AppRoutingModule} from './app-routing.module';
+// Components
 import {AppComponent} from './app.component';
 import {CasesComponent} from './components/cases/cases.component';
 import {CasesDetailsComponent} from './components/cases-details/cases-details.component';
@@ -20,7 +23,10 @@ import {CasesStatComponent} from './components/cases-stat/cases-stat.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
