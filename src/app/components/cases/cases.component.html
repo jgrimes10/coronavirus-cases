@@ -1,1 +1,42 @@
-<p>cases works!</p>
+<div class="example-container mat-elevation-z8">
+  <h2>Corona Virus Cases List</h2>
+  <div *ngIf="isLoadingResults"
+       class="example-loading-shade">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a [routerLink]="['/add-cases']" color="primary" mat-flat-button>
+      <mat-icon>add</mat-icon>
+      Cases
+    </a>
+    <a [routerLink]="['/cases-stat']" color="accent" mat-flat-button>
+      <mat-icon>bar_chart</mat-icon>
+      Statistic
+    </a>
+  </div>
+  <div class="mat-elevation-z8">
+    <table [dataSource]="data" class="example-table" mat-table
+           matSort matSortActive="name" matSortDirection="asc" matSortDisableClear>
+      <!-- Cases Name Column -->
+      <ng-container matColumnDef="name">
+        <th *matHeaderCellDef mat-header-cell>Cases Name</th>
+        <td *matCellDef="let row" mat-cell>{{row.name}}</td>
+      </ng-container>
+
+      <!-- Cases Age Column -->
+      <ng-container matColumnDef="age">
+        <th *matHeaderCellDef mat-header-cell>Age</th>
+        <td *matCellDef="let row" mat-cell>{{row.age}}</td>
+      </ng-container>
+
+      <!-- Cases Status Column -->
+      <ng-container matColumnDef="status">
+        <th *matHeaderCellDef mat-header-cell>Status</th>
+        <td *matCellDef="let row" mat-cell>{{row.status}}</td>
+      </ng-container>
+
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/cases-details/', row._id]" mat-row></tr>
+    </table>
+  </div>
+</div>

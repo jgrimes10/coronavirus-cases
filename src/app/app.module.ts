@@ -4,6 +4,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
+
+import {MaterialDesignModule} from '../material-design/material-design.module';
 // Components
 import {AppComponent} from './app.component';
 import {CasesComponent} from './components/cases/cases.component';
@@ -28,6 +30,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    MaterialDesignModule,
     BrowserAnimationsModule,
   ],
   providers: [],
