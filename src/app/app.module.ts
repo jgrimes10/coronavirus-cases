@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
+import {ChartsModule} from 'ng2-charts';
 
 import {MaterialDesignModule} from '../material-design/material-design.module';
 // Components
@@ -30,6 +31,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    ChartsModule,
     MaterialDesignModule,
     BrowserAnimationsModule,
   ],
