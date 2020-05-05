@@ -1,1 +1,29 @@
-<p>cases-stat works!</p>
+<div class="example-container mat-elevation-z8">
+  <h2>Corona Virus Cases Statistic</h2>
+  <div *ngIf="isLoadingResults"
+       class="example-loading-shade">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a [routerLink]="['/cases']" color="primary" mat-flat-button>
+      <mat-icon>list</mat-icon>
+    </a>
+  </div>
+  <div class="button-row">
+    <mat-button-toggle-group (ngModelChange)="changeStatus()" [(ngModel)]="label" aria-label="Status" name="status">
+      <mat-button-toggle value="Positive">Positive</mat-button-toggle>
+      <mat-button-toggle value="Dead">Dead</mat-button-toggle>
+      <mat-button-toggle value="Recovered">Recovered</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div style="display: block;">
+    <canvas [chartType]="barChartType"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [legend]="barChartLegend"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            baseChart>
+    </canvas>
+  </div>
+</div>

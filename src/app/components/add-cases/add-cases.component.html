@@ -1,1 +1,93 @@
-<p>add-cases works!</p>
+<div class="example-container mat-elevation-z8">
+  <h2>Corona Virus Add Cases</h2>
+  <div *ngIf="isLoadingResults"
+       class="example-loading-shade">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a [routerLink]="['/cases']" color="primary" mat-flat-button>
+      <mat-icon>list</mat-icon>
+    </a>
+  </div>
+  <mat-card class="example-card">
+    <form (ngSubmit)="onFormSubmit()" [formGroup]="casesForm">
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input [errorStateMatcher]="matcher" formControlName="name" matInput
+               placeholder="Name">
+        <mat-error>
+          <span *ngIf="!casesForm.get('name').valid && casesForm.get('name').touched">
+            Please enter name
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option *ngFor="let gl of genderList" [value]="gl">{{gl}}</mat-option>
+        </mat-select>
+        <mat-error>
+          <span *ngIf="!casesForm.get('gender').valid && casesForm.get('gender').touched">
+            Please choose a gender
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Age</mat-label>
+        <input [errorStateMatcher]="matcher" formControlName="age" matInput placeholder="Age"
+               type="number">
+        <mat-error>
+          <span *ngIf="!casesForm.get('age').valid && casesForm.get('age').touched">
+            Please enter age
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Address</mat-label>
+        <input [errorStateMatcher]="matcher" formControlName="address" matInput
+               placeholder="Address">
+        <mat-error>
+          <span *ngIf="!casesForm.get('address').valid && casesForm.get('address').touched">
+            Please enter address
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>City</mat-label>
+        <input [errorStateMatcher]="matcher" formControlName="city" matInput
+               placeholder="City">
+        <mat-error>
+          <span *ngIf="!casesForm.get('city').valid && casesForm.get('city').touched">
+            Please enter city
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Country</mat-label>
+        <input [errorStateMatcher]="matcher" formControlName="country" matInput
+               placeholder="Country">
+        <mat-error>
+          <span *ngIf="!casesForm.get('country').valid && casesForm.get('country').touched">
+            Please enter country
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option *ngFor="let sl of statusList" [value]="sl">{{sl}}</mat-option>
+        </mat-select>
+        <mat-error>
+          <span *ngIf="!casesForm.get('status').valid && casesForm.get('status').touched">
+            Please select status
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <div class="button-row">
+        <button [disabled]="!casesForm.valid" color="primary" mat-flat-button type="submit">
+          <mat-icon>save</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
