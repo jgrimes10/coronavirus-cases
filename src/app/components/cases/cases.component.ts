@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
+import {ApiService} from '../../services/api.service';
+
 @Component({
   selector: 'app-cases',
   templateUrl: './cases.component.html',
@@ -7,7 +9,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CasesComponent implements OnInit {
 
-  constructor() {
+  constructor(private api: ApiService) {
   }
 
   ngOnInit(): void {

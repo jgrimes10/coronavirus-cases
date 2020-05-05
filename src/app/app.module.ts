@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
 // Components
@@ -11,6 +11,7 @@ import {CasesDetailsComponent} from './components/cases-details/cases-details.co
 import {AddCasesComponent} from './components/add-cases/add-cases.component';
 import {EditCasesComponent} from './components/edit-cases/edit-cases.component';
 import {CasesStatComponent} from './components/cases-stat/cases-stat.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,10 @@ import {CasesStatComponent} from './components/cases-stat/cases-stat.component';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
